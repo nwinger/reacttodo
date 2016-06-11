@@ -10,7 +10,7 @@ var TodoAPI = require('TodoAPI');
 
 store.subscribe(() => {
   var state = store.getState();
-  console.log('Set todos', state.todos);
+  console.log('New state', state);
   TodoAPI.setTodos(state.todos);
 });
 
@@ -21,11 +21,11 @@ store.dispatch(actions.addTodos(initialTodos));
 $(document).foundation();
 
 // App css
-require('style!css!sass!applicationStyles');
+require('style!css!sass!applicationStyles')
 
 ReactDOM.render(
   <Provider store={store}>
-    <TodoApp />
+    <TodoApp/>
   </Provider>,
   document.getElementById('app')
 );
