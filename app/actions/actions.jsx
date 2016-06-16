@@ -109,7 +109,9 @@ export var logout = () => {
 export var startLogin = () => {
   return (dispatch, getState) => {
     return firebase.auth().signInWithPopup(githubProvider)
-      .then((result) => {}, (error) => {
+      .then((result) => {
+        // console.log(result);
+      }, (error) => {
         console.log('Unable to auth', error);
     });
   };
